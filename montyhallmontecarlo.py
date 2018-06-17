@@ -3,6 +3,7 @@ counter = 1
 stickcounter = 0
 switchcounter = 0
 
+# loop lots of times...
 while counter < 1000:
     contdoor = random.randint(1, 3)
     prizedoor = random.randint(1, 3)
