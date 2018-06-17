@@ -5,9 +5,10 @@ switchcounter = 0
 doornumber = 3
 switchwon= 0
 doorcount =0
-while doorcount < 100000000:
+n= 10000000 #n number of doors you want to try up to
+while doorcount < n:
     # loop lots of times...
-    while counter < 1000:
+    while counter < 10000:
         contdoor = random.randint(1, doornumber)
         prizedoor = random.randint(1, doornumber)
         opendoor = 1
@@ -22,10 +23,11 @@ while doorcount < 100000000:
         else:
             switchcounter += 1
         counter += 1
+    # find which of the two options had the best results over the simulation
     if switchcounter > stickcounter:
         switchwon += 1
     doorcount +=1
 
-
 print ("switch won ", switchwon, " times" )
+print ("stick won ", (n- switchwon), " times")
 
