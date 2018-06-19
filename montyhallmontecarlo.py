@@ -1,14 +1,16 @@
 import random
+import plotly.plotly as py
+import plotly.graph_objs as go
 counter = 1
 stickcounter = 0
 switchcounter = 0
 doornumber = 3
 switchwon= 0
 doorcount =0
-n= 10000000 #n number of doors you want to try up to
+n= 1000001 #n number of doors you want to try up to
 while doorcount < n:
     # loop lots of times...
-    while counter < 10000:
+    while counter < 100000:
         contdoor = random.randint(1, doornumber)
         prizedoor = random.randint(1, doornumber)
         opendoor = 1
@@ -23,11 +25,13 @@ while doorcount < n:
         else:
             switchcounter += 1
         counter += 1
-    # find which of the two options had the best results over the simulation
-    if switchcounter > stickcounter:
-        switchwon += 1
-    doorcount +=1
-
-print ("switch won ", switchwon, " times" )
-print ("stick won ", (n- switchwon), " times")
-
+    percentwon = (switchcounter/100000) 
+    
+    doorcount +=10000
+trace = go.Scatter(
+        x = doornumber,
+        y = percentwon,
+        mode = "markers"
+    )
+data = [trace]
+py.iplot(data, filename= 'monty hall')

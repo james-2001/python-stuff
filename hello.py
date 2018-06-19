@@ -1,22 +1,22 @@
+import plotly.plotly as py
+import plotly.graph_objs as go
+
+# Create random data with numpy
 import random
-contdoor= random.randint(1,3)
-prizedoor= random.randint(1,3)
-opendoor = random.randint(1,2)
-while opendoor == prizedoor or opendoor == contdoor or opendoor == 0:
-    opendoor += random.randint (10,100)
-    opendoor = (opendoor % 4)
-print(contdoor)
-print(prizedoor)
-print(opendoor)
 
+random_x = random.randint(1,10)
+random_y = random.randint(1,10)
 
+# Create a trace
+trace = go.Scatter(
+    x = random_x,
+    y = random_y,
+    mode = 'markers'
+)
 
-if contdoor + opendoor == 3:
-            contdoor = 3
-            break
-        if contdoor + opendoor == 4:
-            contdoor = 2
-            break
-        if contdoor + opendoor == 5:
-            contdoor = 1
-            break
+data = [trace]
+
+# Plot and embed in ipython notebook!
+py.iplot(data, filename='basic-scatter')
+
+# or plot with: plot_url = py.plot(data, filename='basic-line')
