@@ -1,0 +1,8 @@
+# DO NOT DELETE GRAPHING THING
+trace = go.Scatter(
+        x = doornumber,
+        y = percentwon,
+        mode = "markers"
+    )
+data = [trace]
+py.iplot(data, filename= 'monty hall')
