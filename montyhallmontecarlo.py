@@ -6,10 +6,10 @@ stickcounter = 0
 switchcounter = 0
 doornumber = 3
 switchwon = 0
-n = 10000  # n number of doors you want to try up to
+n = 100  # n number of doors you want to try up to
 while doornumber < n:
     # loop lots of times...
-    while counter < 10000:
+    while counter < 1000000:
         contdoor = random.randint(1, doornumber)
         prizedoor = random.randint(1, doornumber)
         opendoor = 1
@@ -21,11 +21,21 @@ while doornumber < n:
         # find out whether the contestant would be better off switching or sticking
         if contdoor == prizedoor:
             stickcounter += 1
-        else: 
-            if  random.randint(1, doornumber-2) == 1:
+        else:
+            if random.randint(1, doornumber-2) == 1:
                 switchcounter += 1
         counter += 1
     percentwon = (switchcounter/stickcounter)
-    print (doornumber, stickcounter, switchcounter, percentwon)
+#    trace = go.Scatter(
+ #       x = doornumber,
+  #      y = percentwon,
+#       mode = "markers"
+ #   )    
+    print(f"{doornumber}, {stickcounter}, {switchcounter}, {percentwon}")
     doornumber += 1
-    counter =1
+    counter = 1
+    switchcounter = 0
+    stickcounter = 0
+#data = [trace]
+#py.iplot(data, filename= 'monty hall')
+    
