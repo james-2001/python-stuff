@@ -26,16 +26,9 @@ while doornumber < n:
                 switchcounter += 1
         counter += 1
     percentwon = (switchcounter/stickcounter)
-#    trace = go.Scatter(
- #       x = doornumber,
-  #      y = percentwon,
-#       mode = "markers"
- #   )    
     print(f"{doornumber}, {stickcounter}, {switchcounter}, {percentwon}")
     doornumber += 1
+    # reset counter
     counter = 1
     switchcounter = 0
     stickcounter = 0
-#data = [trace]
-#py.iplot(data, filename= 'monty hall')
-    
